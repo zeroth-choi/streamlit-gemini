@@ -3,6 +3,13 @@ import streamlit as st
 import os
 import time  # For implementing retry logic
 
+# Configure Streamlit page settings
+st.set_page_config(
+    page_title="Gemini 챗봇",
+    page_icon=":robot_face:",  # Favicon emoji
+    layout="wide",  # Page layout option
+)
+
 st.title("Gemini 챗봇")
 
 @st.cache_resource
@@ -61,3 +68,4 @@ if prompt := st.chat_input("메시지를 입력하세요."):
                         message_placeholder.markdown("An error occurred while processing your request.")
                     else:
                         print("Retrying...") 
+
