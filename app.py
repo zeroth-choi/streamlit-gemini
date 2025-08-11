@@ -10,7 +10,7 @@ st.set_page_config(
     layout="wide",  # Page layout option
 )
 
-st.title("Gemini 챗봇")
+st.title("🤖 Gemini 챗봇")
 
 @st.cache_resource
 def load_model():
@@ -68,4 +68,5 @@ if prompt := st.chat_input("메시지를 입력하세요."):
                         message_placeholder.markdown("An error occurred while processing your request.")
                     else:
                         print("Retrying...") 
+
 
