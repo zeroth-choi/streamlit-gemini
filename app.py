@@ -5,6 +5,10 @@ st.title("Gemini 챗봇")
 
 @st.cache_resource
 def load_model():
+    API_KEY = os.getenv("GOOGLE_API_KEY")
+
+    # Set up Google Gemini-Pro AI model
+    genai.configure(api_key=API_KEY)
     model = genai.GenerativeModel('gemini-2.0-flash')
     print("모델 로딩...")
     return model
@@ -30,3 +34,4 @@ if prompt := st.chat_input("메시지를 입력하세요."):
                 full_response += chunk.text
 
                 message_placeholder.markdown(full_response)    
+
